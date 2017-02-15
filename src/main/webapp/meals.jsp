@@ -31,17 +31,17 @@
         <tbody>
         <c:forEach  var="meal" items="${mealList}">
             <tr class="${meal.exceed ? 'exceeded' : 'normal'}">
-
                 <td>${meal.dateTime}</td>
                 <td>${meal.description}</td>
                 <td>${meal.calories}</td>
-                <td></td>
-                <td></td>
+                <td><a href="MealServlet?action=edit&mealId=<c:out value="${meal.id}"/>">Update</a></td>
+                <td><a href="MealServlet?action=delete&mealId=<c:out value="${meal.id}"/>">Delete</a></td>
             </tr>
         </c:forEach>
 
 
         </tbody>
     </table>
+    <p><a href="MealServlet?action=insert">Add Meal</a></p>
 </body>
 </html>
