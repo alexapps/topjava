@@ -24,6 +24,10 @@ public class User extends NamedEntity {
 
     private int caloriesPerDay = MealsUtil.DEFAULT_CALORIES_PER_DAY;
 
+    public boolean isNew() {
+        return id == null;
+    }
+
     public User() {
     }
 
@@ -94,5 +98,10 @@ public class User extends NamedEntity {
                 ", roles=" + roles +
                 ", caloriesPerDay=" + caloriesPerDay +
                 ')';
+    }
+
+    @Override
+    public String getName() {
+        return super.getName();
     }
 }
